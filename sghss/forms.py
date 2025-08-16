@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
-from .models import Paciente, User
+from .models import Consulta, Paciente, User
 
 
 class PacienteRegisterForm(UserCreationForm):
@@ -20,3 +20,14 @@ class PacienteRegisterForm(UserCreationForm):
             user.save()
             Paciente.objects.create(user=user)
         return user
+
+
+class ConsultaForm(forms.ModelForm):
+    class Meta:
+        model = Consulta
+        fields = ["data", "hora", "descricao"]
+        widgets = {
+            "data": forms.DateInput(attrs={"type": "date", "class": "border rounded p-2"}),
+            "hora": forms.TimeInput(attrs={"type": "time", "class": "border rounded p-2"}),
+            "descricao": forms.Textarea(attrs={"class": "border rounded p-2", "rows": 3}),
+        }

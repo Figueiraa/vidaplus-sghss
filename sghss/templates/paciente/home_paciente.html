@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VidaPlus - Home</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen flex flex-col">
+        <!-- Navbar -->
+        <header class="bg-blue-600 text-white shadow-md sticky top-0 z-50">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <h1 class="text-2xl font-bold tracking-wide">VidaPlus</h1>
+                <nav class="flex items-center gap-4">
+                    <span class="font-medium bg-purple-400 text-gray-800 px-3 py-1 rounded-full text-sm">Paciente</span>
+                    <a href="{% url 'logout' %}"
+                       class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-xl shadow transition duration-300">Sair</a>
+                </nav>
+            </div>
+        </header>
+        <!-- Main Content -->
+        <main class="flex-1 container mx-auto px-6 py-12">
+            <h2 class="text-4xl font-extrabold text-gray-700 mb-6">Bem-vindo ao VidaPlus!</h2>
+            <p class="text-gray-600 text-lg mb-12">
+                Aqui você pode agendar consultas e gerenciar seus compromissos de saúde de forma fácil e rápida.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div class="bg-white shadow-md rounded-3xl p-8 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-700">Agendar Consulta</h3>
+                    <p class="text-gray-500 mb-6">Escolha data, horário e médico para sua próxima consulta.</p>
+                    <a href="{% url 'agendar_consulta' %}"
+                       class="text-blue-600 font-medium hover:underline">Agendar</a>
+                </div>
+                <div class="bg-white shadow-md rounded-3xl p-8 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-700">Minhas Consultas</h3>
+                    <p class="text-gray-500 mb-6">Verifique todas as consultas que você marcou.</p>
+                    <a href="{% url 'minhas_consultas' %}"
+                       class="text-blue-600 font-medium hover:underline">Consultar</a>
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="bg-white text-gray-700 text-center py-6 mt-10 shadow-inner">
+            &copy; 2025 VidaPlus. Todos os direitos reservados.
+        </footer>
+    </body>
+</html>

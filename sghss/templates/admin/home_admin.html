@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VidaPlus - Home</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen flex flex-col">
+        <!-- Navbar -->
+        <header class="bg-blue-600 text-white shadow-md">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <h1 class="text-2xl font-bold">VidaPlus</h1>
+                <nav class="flex items-center gap-4">
+                    <span class="font-medium bg-yellow-400 text-gray-800 px-3 py-1 rounded-full">Administrador</span>
+                    <a href="{% url 'logout' %}"
+                       class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-xl shadow transition duration-300">Sair</a>
+                </nav>
+            </div>
+        </header>
+        <!-- Main Content -->
+        <main class="flex-1 container mx-auto px-6 py-10">
+            <h2 class="text-4xl font-extrabold text-gray-700 mb-6">Bem-vindo ao VidaPlus!</h2>
+            <p class="text-gray-600 mb-10">
+                Como administrador, você pode gerenciar funcionários, pacientes e agendamentos facilmente.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cadastro de Funcionário -->
+                <div class="bg-white shadow-md rounded-3xl p-6 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-700">Cadastro de Funcionário</h3>
+                    <p class="text-gray-500 mb-4">Cadastre novos funcionários e gerencie seus dados.</p>
+                    <a href="/admin/sghss/funcionario/add/"
+                       class="text-blue-600 font-medium hover:underline">Cadastrar</a>
+                </div>
+                <!-- Cadastro de Administrador -->
+                <div class="bg-white shadow-md rounded-3xl p-6 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-700">Cadastro de Administrador</h3>
+                    <p class="text-gray-500 mb-4">Cadastre novos administradores e gerencie seus dados.</p>
+                    <a href="/admin/sghss/user/add/"
+                       class="text-blue-600 font-medium hover:underline">Cadastrar</a>
+                </div>
+                <!-- Visualizar Usuários -->
+                <div class="bg-white shadow-md rounded-3xl p-6 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-700">Visualizar Usuários</h3>
+                    <p class="text-gray-500 mb-4">Visualize os usuários ativos atualmente.</p>
+                    <a href="/admin/sghss/user/"
+                       class="text-blue-600 font-medium hover:underline">Visualizar</a>
+                </div>
+                <!-- Cadastro de Paciente -->
+                <div class="bg-white shadow-md rounded-3xl p-6 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-700">Cadastro de Paciente</h3>
+                    <p class="text-gray-500 mb-4">Cadastre novos pacientes e gerencie seus dados.</p>
+                    <a href="/admin/sghss/paciente/add/"
+                       class="text-blue-600 font-medium hover:underline">Cadastrar</a>
+                </div>
+                <!-- Visualizar Pacientes -->
+                <div class="bg-white shadow-md rounded-3xl p-6 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-700">Visualizar Pacientes</h3>
+                    <p class="text-gray-500 mb-4">Veja todos os pacientes cadastrados.</p>
+                    <a href="/admin/sghss/paciente/"
+                       class="text-blue-600 font-medium hover:underline">Visualizar</a>
+                </div>
+                <!-- Visualizar Consultas -->
+                <div class="bg-white shadow-md rounded-3xl p-6 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-700">Visualizar Consultas</h3>
+                    <p class="text-gray-500 mb-4">Veja todas as consultas cadastradas e seu status.</p>
+                    <a href="/admin/sghss/consulta/"
+                       class="text-blue-600 font-medium hover:underline">Visualizar</a>
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="bg-white text-gray-700 text-center py-6 mt-10 shadow-inner">
+            &copy; 2025 VidaPlus. Todos os direitos reservados.
+        </footer>
+    </body>
+</html>

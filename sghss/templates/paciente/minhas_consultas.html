@@ -6,14 +6,14 @@
         <title>Minhas Consultas</title>
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body class="bg-gray-100 min-h-screen flex flex-col items-center py-10">
-        <div class="w-full max-w-3xl px-4">
+    <body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen flex flex-col items-center py-10 px-4">
+        <div class="w-full max-w-3xl">
             <!-- Botão Voltar -->
             <a href="{% url 'home_paciente' %}"
-               class="inline-block mb-6 bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition duration-300">
+               class="inline-block mb-6 bg-blue-600 text-white px-4 py-2 rounded-full shadow hover:bg-blue-700 transition duration-300">
                 &larr; Voltar
             </a>
-            <h1 class="text-3xl font-bold mb-6 text-gray-800">Minhas Consultas</h1>
+            <h1 class="text-3xl font-bold mb-6 text-gray-800 text-center">Minhas Consultas</h1>
             {% if consultas %}
                 <div class="space-y-4">
                     {% for consulta in consultas %}
@@ -33,7 +33,7 @@
                     {% endfor %}
                 </div>
             {% else %}
-                <p class="text-gray-500 mt-4 text-center">Você não possui consultas agendadas.</p>
+                <p class="text-gray-500 mt-6 text-center">Você não possui consultas agendadas.</p>
             {% endif %}
         </div>
     </body>
